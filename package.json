@@ -1,0 +1,15 @@
+{
+  "name": "flex-playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Dolov/flex-playground.git",
+  "author": "shisongyan <songyan_shi@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "typescript": "^3.4.5"
+  }
+}
