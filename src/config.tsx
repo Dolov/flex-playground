@@ -1,46 +1,9 @@
 
-export const defaultFlexItems = [
-  {
-    'order': 0,
-    'flex-grow': 0,
-    'flex-shrink': 1,
-    'flex-basis': 'auto',
-    'align-self': 'auto',
-  },
-  {
-    'order': 0,
-    'flex-grow': 0,
-    'flex-shrink': 1,
-    'flex-basis': 'auto',
-    'align-self': 'auto',
-  },
-  {
-    'order': 0,
-    'flex-grow': 0,
-    'flex-shrink': 1,
-    'flex-basis': 'auto',
-    'align-self': 'auto',
-  },
-  {
-    'order': 0,
-    'flex-grow': 0,
-    'flex-shrink': 1,
-    'flex-basis': 'auto',
-    'align-self': 'auto',
-  },
-  {
-    'order': 0,
-    'flex-grow': 0,
-    'flex-shrink': 1,
-    'flex-basis': 'auto',
-    'align-self': 'auto',
-  },
-]
 
 
 
 
-export const flexContainerProps = {
+export const flexContainerProps: any = {
   'flex-direction': {
     'description': '设置主轴方向，确定弹性子元素排列方式',
     'values': ['row', 'row-reverse', 'column', 'column-reverse'],

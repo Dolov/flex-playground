@@ -1,8 +1,12 @@
 import * as React from 'react'
 
+import { flexItemProps } from '../config'
+import { ItemPropsConfigProps } from '../interface'
 
 
-export default class ItemPropsConfig extends React.PureComponent {
+
+
+export default class ItemPropsConfig extends React.PureComponent<ItemPropsConfigProps> {
 
   state = {
 
@@ -11,7 +15,7 @@ export default class ItemPropsConfig extends React.PureComponent {
   render() {
     return (
       <div className="item-props-config">
-        item-props-config
+        
       </div>
     )
   }

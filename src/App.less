@@ -2,18 +2,82 @@
   padding: 16px;
   flex: 1;
   display: flex;
-  flex-direction: column;
-  
   :global {
-
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
     .view {
       flex: 1;
       display: flex;
       padding: 16px;
-      border: 1px dashed #f1f1f1;
+      border: 1px dashed #34c3ff;
       transition: .3s;
+      position: relative;
+      .add {
+        position: absolute;
+        right: -16px;
+        top: -16px;
+      }
+    }
+
+    .container-props-config {
+      display: flex;
+      
+      .ant-radio-group {
+        margin-right: 32px;
+        .ant-radio-wrapper {
+          display: block;
+          height: 30px;
+          line-height: 30px;
+        }
+      }
+      .prop-name {
+        font-size: 16px;
+        padding-top: 8px;
+      }
+      
+    }
+
+    .item-props-config {
+      min-width: 150px;
+      padding: 16px;
+    }
+
+    .flex-item {
+      width: 150px;
+      min-height: 50px;
+      border: 1px solid #e8e8e8;
+      margin-right: 16px;
+      margin-bottom: 6px;
+      position: relative;
       &:hover {
-        border-color: #34c3ff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+        .remove {
+          display: block;
+          .anticon {
+            line-height: 0;
+          }
+        }
+      }
+      .remove {
+        position: absolute;
+        right: -16px;
+        top: -16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        display: none;
+        transition: 0.3s;
+        &:hover {
+          .anticon {
+            color: #f5222d;
+          }
+        }
+        .anticon {
+          color: #c4353d;
+        }
       }
     }
   }
