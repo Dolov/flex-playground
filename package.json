@@ -6,12 +6,18 @@
   "author": "shisongyan <songyan_shi@163.com>",
   "license": "MIT",
   "dependencies": {
+    "antd": "^3.17.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
+  "scripts": {
+    "dev": "parcel index.html",
+    "start": "yarn dev",
+    "build": "parcel build index.html"
+  },
   "devDependencies": {
     "autoprefixer": "^9.5.1",
-    "less": "^3.9.0",
+    "less": "2.7.3",
     "postcss-less": "^3.1.4",
     "postcss-modules": "^1.4.1",
     "tslint": "^5.16.0",
