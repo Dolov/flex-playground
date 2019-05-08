@@ -1,11 +1,17 @@
 .appWrapper {
   padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   
   :global {
 
     .view {
+      flex: 1;
+      display: flex;
       padding: 16px;
       border: 1px dashed #f1f1f1;
+      transition: .3s;
       &:hover {
         border-color: #34c3ff;
       }

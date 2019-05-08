@@ -1,20 +1,22 @@
 import * as React from 'react'
-import { Card } from 'antd'
 import 'antd/lib/card/style/index.less'
+import { ViewProps } from '../interface'
+import FlexItem from './FlexItem'
 
 
-const { Meta } = Card
-
-export default class View extends React.PureComponent {
+export default class View extends React.PureComponent<ViewProps> {
 
   state = {
 
   }
 
   render() {
+    const { data, containerFlexProps } = this.props
     return (
-      <div className="view">
-        1245
+      <div className="view" style={containerFlexProps}>
+        {data.map(item => (
+          <FlexItem {...item} />
+        ))}
       </div>
     )
   }
