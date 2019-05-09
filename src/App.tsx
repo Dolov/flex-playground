@@ -1,6 +1,6 @@
 import * as React from 'react'
-import View from './Components//View'
-import { flexContainerProps, flexItemProps } from './config'
+import Icon from 'antd/lib/icon'
+import View from './Components/View'
 import ContainerPropsConfig from './Components/ContainerPropsConfig'
 import ItemPropsConfig from './Components/ItemPropsConfig'
 import { transformPropName, generateItem } from './utils'
@@ -12,6 +12,7 @@ import S from './App.less'
 export default class App extends React.PureComponent {
 
   state = {
+    focusId: null,
     flexItems: Array.from({length: 5}, () => generateItem()),
     containerFlexProps: {
       flexDirection: 'row',
@@ -34,8 +35,20 @@ export default class App extends React.PureComponent {
     })
   }
 
-  onSelectItem = () => {
+  itemPropsChange = (id, propName, e) => {
+    const value = e.target ? e.target.value: e
+    const { flexItems } = this.state
+    const target = flexItems.find(item => item.id === id)
+    target[propName] = value
+    this.setState({
+      flexItems: [...flexItems],
+    })
+  }
 
+  onSelectItem = id => {
+    this.setState({
+      focusId: id,
+    })
   }
 
   addItem = () => {
@@ -46,25 +59,27 @@ export default class App extends React.PureComponent {
     })
   }
 
-  remove = index => {
+  remove = (index, e) => {
     const { flexItems } = this.state
     flexItems.splice(index, 1)
-    console.log(flexItems, 'flexItems')
     this.setState({
       flexItems: [...flexItems],
     })
+    e.stopPropagation()
   }
 
   render() {
-    const { flexItems, containerFlexProps } = this.state
-    const itemFlexProps = flexItems[0]
+    const { flexItems, containerFlexProps, focusId } = this.state
+    const focusItemFlexProps = flexItems.find(item => item.id === focusId)
     return (
       <div className={S.appWrapper}>
         <div className="main">
           <View 
             data={flexItems}
             remove={this.remove}
+            focusId={focusId}
             addItem={this.addItem}
+            onSelectItem={this.onSelectItem}
             containerFlexProps={containerFlexProps}
           />
           <ContainerPropsConfig 
@@ -72,9 +87,14 @@ export default class App extends React.PureComponent {
             onContainerPropsChange={this.onContainerPropsChange}
           />
         </div>
-        <ItemPropsConfig 
-          itemFlexProps={itemFlexProps}
-        />
+        {focusItemFlexProps&&(
+          <ItemPropsConfig 
+            onChange={this.itemPropsChange}
+            itemFlexProps={focusItemFlexProps}
+          />)}
+        <a href="https://github.com/Dolov/flex-playground">
+          <span className="github"><Icon type="github" /></span>
+        </a>
       </div>
     )
   }

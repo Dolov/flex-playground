@@ -22,8 +22,24 @@
       }
     }
 
+    .github {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
     .container-props-config {
-      display: flex;
+      .title {
+        padding: 8px 0 4px;
+        .explain {
+          margin-left: 16px;
+        }
+      }
+      .configs {
+        display: flex;
+      }
       
       .ant-radio-group {
         margin-right: 32px;
@@ -35,14 +51,19 @@
       }
       .prop-name {
         font-size: 16px;
-        padding-top: 8px;
       }
       
     }
 
     .item-props-config {
-      min-width: 150px;
+      min-width: 250px;
       padding: 16px;
+      .configs {
+        margin-top: 16px;
+        .prop-wrapper {
+          padding-bottom: 32px;
+        }
+      }
     }
 
     .flex-item {

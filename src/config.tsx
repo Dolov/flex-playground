@@ -1,8 +1,6 @@
 
 
 
-
-
 export const flexContainerProps: any = {
   'flex-direction': {
     'description': '设置主轴方向，确定弹性子元素排列方式',
@@ -30,7 +28,7 @@ export const flexContainerProps: any = {
   },
 }
 
-export const flexItemProps = {
+export const flexItemProps: object = {
   'order': {
     'description': '控制弹性容器里子元素的顺序',
   },
@@ -41,7 +39,7 @@ export const flexItemProps = {
     'description': '设置弹性子元素的收缩比率',
   },
   'flex-basis': {
-    'description': '指定弹性子元素伸缩前的默认大小值，相当于width和height属性。',
+    'description': '指定弹性子元素伸缩前的默认大小值，相当于 width 和 height 属性。',
   },
   'flex': {
     'description': 'flex-grow, flex-shrink 和 flex-basis 属性的复合属性',

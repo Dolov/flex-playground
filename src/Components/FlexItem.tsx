@@ -1,6 +1,8 @@
 import * as React from 'react'
-import { Tag, Button } from 'antd'
+import Tag from 'antd/lib/tag'
+import Button from 'antd/lib/button'
 import { FlexItemProps } from '../interface'
+import { transformPropNames } from '../utils'
 
 import 'antd/lib/tag/style'
 
@@ -12,11 +14,12 @@ export default class FlexItem extends React.PureComponent<FlexItemProps> {
   }
 
   render() {
-    const { index, remove } = this.props
+    const { index, remove, onClick, focusId, id, ...otherProps } = this.props
+    const isFocus = focusId === id
     return (
-      <div className="flex-item">
-        <Button onClick={() => remove(index)} className="remove" type="dashed" shape="circle" icon="minus" />
-        <Tag color="blue">{index+1}</Tag>
+      <div className="flex-item" style={transformPropNames(otherProps)} onClick={() => {onClick(id)}}>
+        <Button onClick={e => remove(index, e)} className="remove" type="dashed" shape="circle" icon="minus" />
+        {`${isFocus}`}
       </div>
     )
   }
