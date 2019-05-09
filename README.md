@@ -9,5 +9,5 @@
 该项目基于 Parcel 构建，本地运行需要先安装 Parcel
 
 ```js
-    yarn global add parcel-bundler
+yarn global add parcel-bundler
 ```
