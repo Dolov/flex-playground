@@ -13,10 +13,12 @@
   "scripts": {
     "dev": "parcel index.html",
     "start": "yarn dev",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --public-url ./",
+    "pub": "sh ./publish.sh"
   },
   "devDependencies": {
     "autoprefixer": "^9.5.1",
+    "cssnano": "^4.1.10",
     "less": "2.7.3",
     "postcss-less": "^3.1.4",
     "postcss-modules": "^1.4.1",
