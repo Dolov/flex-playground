@@ -2,11 +2,13 @@ import * as React from 'react'
 import Icon from 'antd/lib/icon'
 import View from './Components/View'
 import ContainerPropsConfig from './Components/ContainerPropsConfig'
-import ItemPropsConfig from './Components/ItemPropsConfig'
 import { transformPropName, generateItem } from './utils'
 
 import S from './App.less'
 
+const { lazy, Suspense } = React
+
+const ItemPropsConfig = lazy(() => import('./Components/ItemPropsConfig'))
 
 
 export default class App extends React.PureComponent {
@@ -88,10 +90,13 @@ export default class App extends React.PureComponent {
           />
         </div>
         {focusItemFlexProps&&(
-          <ItemPropsConfig 
-            onChange={this.itemPropsChange}
-            itemFlexProps={focusItemFlexProps}
-          />)}
+          <Suspense fallback={<div>Loading...</div>}>
+            <ItemPropsConfig 
+              onChange={this.itemPropsChange}
+              itemFlexProps={focusItemFlexProps}
+            />
+
+          </Suspense>)}
         <a href="https://github.com/Dolov/flex-playground">
           <span className="github"><Icon type="github" /></span>
         </a>

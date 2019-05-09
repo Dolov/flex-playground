@@ -3,7 +3,7 @@ import Button from 'antd/lib/button'
 import { FlexItemProps } from '../interface'
 import { transformPropNames } from '../utils'
 
-
+const imgsrc = require('./1.svg')
 
 
 export default class FlexItem extends React.PureComponent<FlexItemProps> {
@@ -18,7 +18,7 @@ export default class FlexItem extends React.PureComponent<FlexItemProps> {
     return (
       <div className="flex-item" style={transformPropNames(otherProps)} onClick={() => {onClick(id)}}>
         <Button onClick={e => remove(index, e)} className="remove" type="dashed" shape="circle" icon="minus" />
-        {`${isFocus}`}
+        <img className={!isFocus&&"onBlur"} src={imgsrc} />
       </div>
     )
   }

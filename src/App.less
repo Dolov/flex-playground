@@ -68,11 +68,14 @@
 
     .flex-item {
       width: 150px;
-      min-height: 50px;
+      min-height: 70px;
       border: 1px solid #e8e8e8;
       margin-right: 16px;
       margin-bottom: 6px;
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       &:hover {
         box-shadow: 0 2px 8px rgba(0,0,0,0.09);
         .remove {
@@ -81,6 +84,18 @@
             line-height: 0;
           }
         }
+      }
+      .onBlur {
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+        filter: grayscale(100%);
+        filter: gray;
+      }
+      img {
+        width: 100%;
+        transition: 0.3s;
       }
       .remove {
         position: absolute;
