@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Button from 'antd/lib/button'
-import 'antd/lib/button/style'
+
 import { ViewProps } from '../interface'
 import FlexItem from './FlexItem'
 

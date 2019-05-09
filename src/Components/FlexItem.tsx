@@ -1,10 +1,9 @@
 import * as React from 'react'
-import Tag from 'antd/lib/tag'
 import Button from 'antd/lib/button'
 import { FlexItemProps } from '../interface'
 import { transformPropNames } from '../utils'
 
-import 'antd/lib/tag/style'
+
 
 
 export default class FlexItem extends React.PureComponent<FlexItemProps> {

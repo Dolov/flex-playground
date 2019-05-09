@@ -2,7 +2,7 @@ import * as React from 'react'
 import Tooltip from 'antd/lib/tooltip'
 import Tag from 'antd/lib/tag'
 
-import 'antd/lib/tooltip/style'
+
 
 export const transformPropName = (propName: string) => {
   if (propName.includes("-")) {

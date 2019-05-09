@@ -7,9 +7,7 @@ import { flexItemProps } from '../config'
 import { ItemPropsConfigProps } from '../interface'
 import { Emphasize, PropName } from '../utils'
 
-import 'antd/lib/input/style'
-import 'antd/lib/select/style'
-import 'antd/lib/input-number/style'
+
 
 const { Option } = Select
 export default class ItemPropsConfig extends React.Component<ItemPropsConfigProps> {
@@ -77,7 +75,7 @@ const PropValue = ({name, ...otherProps}) => {
       <Select {...otherProps} style={style}>
         {options.map(option => {
           const { label, value } = option
-          return <Option value={value}>{label}</Option>
+          return <Option key={value} value={value}>{label}</Option>
         })}
       </Select>
     )

@@ -5,7 +5,7 @@ import { flexContainerProps } from '../config'
 import { ContainerPropsConfigProps } from '../interface'
 import { transformPropName, Highlight, Emphasize, PropName } from '../utils'
 
-import 'antd/lib/radio/style'
+
 
 
 const propNames = Object.keys(flexContainerProps)
